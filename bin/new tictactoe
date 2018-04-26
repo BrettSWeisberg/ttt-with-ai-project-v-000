@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+require_relative '../config/environment'
+
+puts "welcome to tic tac toe!"
+puts "what kind of game would you like to play, 0,1, or player."
+num_players = gets.strip
+if num_players.to_i == 1
+puts "only 1"
+puts "Who wants to go first? 1 for X or 2 for O."
+first = gets.strip
+if first.to_i == 1
+game = Game.new(Players::Human.new("X"),PLayers::Computer.new("0"))
+game.play
+elsif first.to_i == 2
